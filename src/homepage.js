@@ -13,13 +13,7 @@ const pageLoad = function(){
     // Creating, filling, appending header with nav
     const header = document.createElement('header');
 
-    const h1 = document.createElement('h1');
-    h1.textContent = 'Bloom Cafe and Restaurant';
-    header.appendChild(h1);
 
-    const slogan = document.createElement('h3');
-    slogan.textContent = 'your urban oasis in the heart of Vancouver';
-    header.appendChild(slogan);
 
     const nav = document.createElement('nav');
     const navList = document.createElement('ul');
@@ -33,9 +27,9 @@ const pageLoad = function(){
 
     for (let i=0; i<3; i++){
         const li = document.createElement('li');
-        const button = document.createElement('button')
-        li.appendChild(button);
-        button.textContent = liArray[i];
+        // const button = document.createElement('button')
+        // li.appendChild(button);
+        li.textContent = liArray[i];
         navList.appendChild(li);
 
         // NEED EVENT LISTENERS
@@ -51,24 +45,32 @@ const pageLoad = function(){
     const footerP = document.createElement('p');
     footerP.textContent = 'Made by ashsic, 2023';
     footer.appendChild(footerP);
-    content.after(footerP);
-    
-    // Adding img, copy to content
-
-    const myCafe = new Image();
-    myCafe.src = Cafe;
-    content.appendChild(myCafe);
-
-    const copywriting = document.createElement('p');
-    copywriting.textContent = "Welcome to Bloom, your urban oasis in the heart of Vancouver. Step into our Scandinavian-inspired cafe, where the fusion of lush greenery and minimalist design creates a tranquil retreat. At Bloom, we're renowned for our exceptional coffee, ethically sourced from the world's finest regions, and our mouthwatering croissants, baked to golden perfection.";
-    content.appendChild(copywriting);
+    content.after(footer);
 
 };
 
+const homeLoad = function () {
+    // Target #content
+    const content = document.querySelector('#content');
 
+    // Adding h1, h3, copy to div in content
 
+    const homeContent = document.createElement('div');
+    homeContent.setAttribute('class', 'home-content');
 
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Bloom Cafe and Restaurant';
+    homeContent.appendChild(h1);
 
+    const slogan = document.createElement('h3');
+    slogan.textContent = 'your urban oasis in the heart of Vancouver';
+    homeContent.appendChild(slogan);
 
+    const copywriting = document.createElement('p');
+    copywriting.textContent = "Welcome to Bloom! Step into our Scandinavian-inspired cafe, where the fusion of lush greenery and minimalist design creates a tranquil retreat. At Bloom, we're renowned for our exceptional coffee, ethically sourced from the world's finest regions, and our mouthwatering croissants, baked to golden perfection.";
+    homeContent.appendChild(copywriting);
 
-export { pageLoad };
+    content.appendChild(homeContent);
+};
+
+export { pageLoad, homeLoad };

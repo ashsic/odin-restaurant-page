@@ -1,11 +1,11 @@
 // index.js
 
 import _ from 'lodash';
-import { pageLoad } from './homepage.js';
+import { pageLoad, homeLoad } from './homepage.js';
 
 
 
 pageLoad();
-
+homeLoad();
 
 console.log("test");
